@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    section{
+        display: flex;
+        gap: 10px;
+
+
+
+    }
+
+    div{
+        padding: 5px;
+        color: brown;
+        font-size: 20px;
+        min-width: 20px;
+
+
+    }
+
+</style>
+<body>
+<section>
+    <div>A</div>
+    <img src="../assset/bubududu-panda.gif" alt="gif">
+    <div>B</div>
+    <img src="../assset/bubududu-panda.gif" alt="gif">
+    <div>C</div>
+    <img src="../assset/bubududu-panda.gif" alt="gif">
+    <div>D</div>
+    <img src="../assset/bubududu-panda.gif" alt="gif">
+    <div>E</div>
+    <img src="../assset/bubududu-panda.gif" alt="gif">
+    <div>F</div>
+    <img src="../assset/hug.gif" alt="gif">
+</section>
+<script>
+    var list =["A","B","C","D","E","F"];
+    setInterval(()=>{
+        list.unshift(list.pop());
+        for (let i = 0 ; i<list.length;i++){
+            document.getElementsByTagName("div")[i].innerText = list[i];
+        }
+    },800)
+</script>
+</body>
+</html>

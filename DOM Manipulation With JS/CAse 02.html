@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Rows Layout</title>
+
+    <style>
+        body {
+            background-color: #3a4a5a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+
+        .row {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgb(255, 255, 255);
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .row-1 {
+            justify-content: flex-start;
+
+        }
+
+        .row-2 {
+            justify-content: center;
+            gap: 10px;
+            padding-left: 100px;
+            padding-right: 100px;
+
+
+        }
+
+        .row-3 {
+            justify-content: flex-end;
+        }
+
+        .box {
+            height: 38px;
+            border-radius: 6px;
+        }
+
+        .pink {
+            width: 80px;
+            background-color: #fb267e;
+        }
+
+        .purple {
+            width: 80px;
+            background-color: #d322f6;
+        }
+
+        .red {
+            width: 80px;
+            background-color: #ff8216;
+        }
+
+        .green {
+            width: 80px;
+            background-color: #11ff11;
+        }
+
+        .blue {
+            width: 80px;
+            background-color: #1919ff;
+        }
+
+        .yellow {
+            width: 80px;
+            background-color: #ffe13b;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+
+    <div class="row row-1">
+        <div class="box pink"></div>
+    </div>
+
+    <div class="row row-2">
+        <div class="box purple"></div>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+
+    <div class="row row-3">
+        <div class="box yellow"></div>
+    </div>
+
+</div>
+
+<script>
+
+    var colors = ["#fb267e", "#d322f6", "#ff8216", "#11ff11", "#1919ff", "#ffe13b"];
+
+    var boxes = document.querySelectorAll(".box");
+
+
+
+
+    setInterval(() => {
+        colors.unshift(colors.pop());
+        for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.backgroundColor = colors[i];
+        }
+    }, 800);
+
+</script>
+</body>
+</html>
